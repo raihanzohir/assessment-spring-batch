@@ -21,15 +21,11 @@ Backend Technical Assessment
 
 #### Project execution
 - Open the project directory in Visual Studio Code or another code editor.
-- Open the git bash terminal from the project directory, or you can use the Visual Studio Code terminal to run the project.
+- Open the git bash terminal from the project directory, or use the Visual Studio Code terminal to run the project.
 
 ### Run project
-- Make sure you are in the project directory (directory that contains `packages.json`).
+- Ensure you are in the project directory (which contains `packages.json`).
 - Install all dependencies using the command - `npm install`
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-After successfully compiling the files, the application is accessible on the localhost;
-the application URL is: `http://localhost:4200` in your machine.
+- Run `ng serve` for a dev server. Navigate to `http://localhost:4200/` for Login page User: `admin` and Password: `123456`
 
 
