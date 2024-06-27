@@ -1,0 +1,20 @@
+@import '../../../@vex/styles/custom/form-fields.scss';
+
+.login-bg{
+    @apply h-full flex items-center justify-center bg-no-repeat bg-cover bg-center;
+}
+.login-container{
+    @apply min-w-[300px] md:min-w-[420px] pb-10 rounded-md shadow-xl hover:shadow-2xl overflow-auto bg-white;
+}
+
+.forgot-text {
+    @apply text-sm italic text-blue-600 hover:underline;
+}
+
+.steps p{
+    font-size: 0.75rem;
+}
+
+::ng-deep .mat-progress-spinner circle {
+    stroke: white !important;
+}

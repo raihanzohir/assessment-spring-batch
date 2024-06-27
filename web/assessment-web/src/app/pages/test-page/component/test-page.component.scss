@@ -1,0 +1,51 @@
+@import '../../styles/setup.components.common.scss';
+
+.search-box{
+    @apply ml-2 bg-foreground rounded-md border px-4 max-w-[200px] flex-auto flex items-center border-gray-300;
+}
+
+.search-box-input{
+    @apply px-4 py-1.5 border-0 outline-none w-full bg-transparent;
+}
+
+.search-btn{
+    @apply flex items-center ml-2 px-3 py-1.5 bg-white text-primary rounded-md font-semibold;
+}
+
+.pagination-icon-button{
+    @apply flex items-center;
+}
+.pagination-icon{
+    @apply cursor-pointer icon-lg;
+}
+
+.mat-header-cell.mat-column-serialNo{
+    width: 5%;
+}
+.mat-header-cell.mat-column-action{
+    width: 5%;
+}
+.mat-header-cell.mat-column-accountNumber{
+    width: 10%;
+}
+.mat-header-cell.mat-column-customerId{
+    width: 10%;
+}
+.mat-header-cell.mat-column-trxDate{
+    width: 10%;
+}
+.mat-header-cell.mat-column-trxTime{
+    width: 10%;
+}
+.mat-header-cell.mat-column-description{
+    width: 40%;
+    white-space: pre-wrap;
+}
+
+.mat-column-accountNumber, .mat-column-customerId, .mat-column-trxDate, .mat-column-trxTime{
+    @apply text-center;
+} 
+
+.mat-column-trxAmount{
+    @apply text-right pr-2;
+}

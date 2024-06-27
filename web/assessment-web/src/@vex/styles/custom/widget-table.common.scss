@@ -1,0 +1,58 @@
+// primary color #6366F1
+@import './mat-table.scss';
+
+.section-header {
+    @apply bg-primary p-2 flex items-center overflow-hidden;
+
+    .section-title {
+        @apply text-white m-0 flex-auto font-semibold;
+    }
+}
+
+.btn {
+    min-width: 4.5rem;
+    padding: 0.1rem 0.5rem;
+    border: 1.5px solid white;
+    border-radius: 0.3rem;
+    background-color: 6366F1;
+    color: white;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+}
+.btn.btn-category:hover, .btn.btn-category.active{
+    background-color: white;
+    border-color: white;
+    color: #6366F1;
+    transition: 0.5s;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 2px 3px, rgba(0, 0, 0, 0.23) 0px 2px 3px;
+}
+
+//dialog css
+button.mat-raised-button{
+    min-width: 7.3rem;
+}
+
+.table-striped{
+    border: solid 1px #f2f2f2;
+    width: 100%;
+}
+
+.table-striped tr{
+    padding: 0 5px;
+    line-height: 1rem;
+}
+
+.table-striped tr:nth-child(even) {
+    background-color: #F2F2F2;
+}
+
+.table-striped tr td:nth-child(even) {
+    text-align: end;
+}
+
+.font-normal{
+    color: #555;
+}
+//dialog css end
+

@@ -1,0 +1,27 @@
+<div>
+    <!-- Header -->
+    <div class="pb-3 border-b text-center">
+      <mat-icon color="warn" class="text-5xl w-12 h-12">timer</mat-icon>
+      <p class="text-warn">SESSION ALERT!</p>
+    </div>
+    <!-- Body -->
+    <div class="container">
+      <div class="flex justify-center py-2">
+        <p *ngIf="sessionTimer>0">Your session ends in: {{sessionTimer}}</p>
+        <p *ngIf="sessionTimer == 0">Your session was ended.</p>
+      </div>
+      <!-- Footer -->
+      <div class="flex flex-row justify-center py-6 px-1 gap-1">
+        <button *ngIf="sessionTimer>0" mat-raised-button color="primary">
+          STAY SIGN IN
+        </button>
+        <button *ngIf="sessionTimer>0" mat-stroked-button (click)="cancel()" class="border border-gray-300">
+          CANCEL
+        </button>
+        <button *ngIf="sessionTimer == 0" mat-raised-button color="primary" (click)="cancel()">
+          OK
+        </button>
+      </div>     
+    </div>
+  </div>
+

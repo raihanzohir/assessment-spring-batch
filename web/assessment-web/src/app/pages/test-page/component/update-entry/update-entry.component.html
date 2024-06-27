@@ -1,0 +1,51 @@
+<div class="h-full">
+  <div class="card">
+    <div class="flex items-center p-2">
+      <mat-icon color="primary" class="hover:cursor-pointer font-bold" (click)="close()">keyboard_arrow_left</mat-icon>
+      <p class="text-lg font-semibold">UPDATE RECORD</p>
+    </div>
+
+    <mat-divider></mat-divider>
+
+    <div class="px-2 py-3">
+      
+      <form (ngSubmit) = "onSubmit()" class="w-full">
+
+        <table class="mb-4 table-transactions">
+          <tr>
+            <td>A/C NO</td>
+            <td>{{rowData.accountNumber}}</td>
+          </tr>
+          <tr>
+            <td>TRX AMOUNT</td>
+            <td>{{rowData.trxAmount}}</td>
+          </tr>
+          <tr>
+            <td>TRX DATE</td>
+            <td>{{rowData.trxDate}}</td>
+          </tr>
+          <tr>
+            <td>TRX TIME</td>
+            <td>{{rowData.trxTime}}</td>
+          </tr>
+          <tr>
+            <td>CUSTOMER ID</td>
+            <td>{{rowData.customerId}}</td>
+          </tr>
+        </table>
+
+        <mat-form-field class="flex flex-col">
+          <mat-label>Description</mat-label>
+          <input matInput required type="text" [(ngModel)]="rowData.description" name="description" value="rowData.description">
+        </mat-form-field>
+
+        <div class="flex flex-col py-2">
+          <div class="flex items-center justify-end gap-2">
+            <button (click)="close()" mat-stroked-button type="button">Cancel</button>
+            <button color="primary" mat-raised-button type="submit">Update</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

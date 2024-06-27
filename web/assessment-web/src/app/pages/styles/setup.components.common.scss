@@ -1,0 +1,58 @@
+.section-header{
+    @apply  bg-primary rounded-t-sm;
+    .title{
+        @apply text-white;
+    }
+    .btn-add{
+        @apply bg-white text-primary;
+    }
+}
+
+
+th.mat-header-cell{
+    @apply font-semibold text-xs text-center bg-gray-200 text-black;
+}
+
+th.mat-header-cell:first-of-type, td.mat-cell:first-of-type {
+    padding: 0 0.5rem;
+}
+
+.mat-column-serialNo, .mat-column-status, .mat-column-userStatus {
+    text-align: center;
+}
+
+.mat-column-status, .mat-column-userStatus {
+    padding-right: 4px !important;
+}
+
+th.mat-header-cell:last-of-type, td.mat-cell:last-of-type {
+    padding: 0 0.5rem;
+}
+
+tr.mat-header-row.cdk-header-row{
+    height: 2.5rem;
+}
+
+tr.mat-row.cdk-row{
+    height: 2.1rem;
+}
+
+.mat-row:nth-of-type(even) .mat-cell {
+    @apply bg-gray-100;
+
+}
+
+.mat-row:hover .mat-cell{
+    @apply bg-gray-200;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.mat-cell, .mat-header-cell{
+    // border-right: 1px solid rgba(0,0,0,.12);
+    border: 1px solid rgba(0,0,0,.12);
+}
+
+// .mat-cell:first-of-type, .mat-header-cell:first-of-type{
+//     border-left: 1px solid rgba(0,0,0,.12);
+// }

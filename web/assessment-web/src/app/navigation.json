@@ -1,0 +1,174 @@
+[
+    {
+        "type": "link",
+        "label": "Dashboards",
+        "route": ""
+    },
+
+    {
+        "type": "dropdown",
+        "label": "Admin",
+        "children": [
+            {
+                "type": "link",
+                "label": "Activity Master",
+                "route": "admin/activity-master"
+            },
+            {
+                "type": "link",
+                "label": "Event Master",
+                "route": "admin/event-master"
+            }
+            ,
+            {
+                "type": "link",
+                "label": "Menu Master",
+                "route": "admin/menu-master"
+            }
+            ,
+            {
+                "type": "link",
+                "label": "Role Master",
+                "route": "admin/role-master"
+            }
+            ,
+            {
+                "type": "link",
+                "label": "User Rights",
+                "route": "admin/user-rights"
+            }
+            ,
+            {
+                "type": "link",
+                "label": "User Roles",
+                "route": "admin/user-roles"
+            }
+        ]
+    },
+      
+    {
+        "type": "link",
+        "label": "Account Statement",
+        "route": "account-statement"
+    },
+      
+    {
+        "type": "dropdown",
+        "label": "Fund Transfer",
+        "children": [
+            {
+                "type": "link",
+                "label": "Transfer",
+                "route": "fund-transfer/transfer"
+            },
+            {
+                "type": "link",
+                "label": "Bulk Transfer",
+                "route": "fund-transfer/bulk-transfer"
+            }
+    ]
+    },
+
+    {
+        "type": "link",
+        "label": "Bulk Upload Transaction",
+        "route": "bulk-upload-transaction"
+    },
+
+    {
+        "type": "dropdown",
+        "label": "Foreign Trade",
+        "children": [
+            {
+                "type": "link",
+                "label": "Apply LC",
+                "route": "foreign-trade/apply-lc"
+            },
+            {
+                "type": "link",
+                "label": "LC Status",
+                "route": "foreign-trade/lc-status"
+            },
+            {
+                "type": "link",
+                "label": "Reports",
+                "route": "foreign-trade/reports"
+            }
+        ]
+    },
+
+    {
+        "type": "dropdown",
+        "label": "Cards",
+        "children": [
+            {
+                "type": "link",
+                "label": "Card Transaction",
+                "route": "card-transaction"
+            },
+            {
+                "type": "link",
+                "label": "Reports",
+                "route": "card-transaction/reports"
+                }
+        ]
+    },
+
+    {
+        "type": "dropdown",
+        "label": "Bill Payment",
+        "children": [
+            {
+                "type": "link",
+                "label": "Utility Bill Payment",
+                "route": "bill-payment/utility-bill-payment"
+            },
+            {
+                "type": "link",
+                "label": "House Rent",
+                "route": "bill-payment/house-rent"
+            },
+            {
+                "type": "link",
+                "label": "Reports",
+                "route": "bill-payment/reports"
+            }
+        ]
+    },
+
+    {
+        "type": "dropdown",
+        "label": "Loan Application",
+        "children": [
+            {
+                "type": "link",
+                "label": "Loan History",
+                "route": "loan-application/loan-history"
+            }
+        ]
+    },
+
+    {
+        "type": "dropdown",
+        "label": "Requests",
+        "children": [
+            {
+                "type": "link",
+                "label": "Request History",
+                "route": "requests/request-history"
+            }
+        ]
+    },
+
+    {
+        "type": "dropdown",
+        "label": "Inquiries",
+        "children": [
+            {
+                "type": "link",
+                "label": "Inquiry History",
+                "route": "inquiries/inquiry-history"
+            }
+        ]
+    }
+]

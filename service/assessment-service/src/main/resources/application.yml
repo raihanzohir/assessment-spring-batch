@@ -1,0 +1,34 @@
+server:
+    port: 9090
+
+#cors-allowed-origins: *
+jwt-secret: 53ce5b96fb51b56499fd986038f95eea0a3f64b88985c09b414ad51cf095c0b453ce5b96fb51b56499fd986038f95eea0a3f64b88985c09b414ad51cf095c0b4
+jwt-validity: 3600000
+spring:
+    application:
+        name: backend-technical-assessment
+    datasource:
+        url: jdbc:mysql://localhost:3306/assessment
+        username: root
+        password:
+        driver-class-name: com.mysql.cj.jdbc.Driver
+    jpa:
+        hibernate:
+            ddl-auto: update
+#        show-sql: true
+        properties:
+            hibernate:
+                format_sql: true
+        database: mysql
+        database-platform: org.hibernate.dialect.MySQLDialect
+    batch:
+        jdbc:
+            initialize-schema: ALWAYS
+        job:
+            enabled: false
+
+security:
+    jwt:
+        token:
+            secret-key: secret-key
+            expire-length: 300000 # 5 minutes duration by default: 5 minutes * 60 seconds * 1000 miliseconds

@@ -1,0 +1,12 @@
+.custom-dialog-padding .mat-dialog-container {
+    @apply p-3;
+}
+
+// status color
+.statusActiveColor{
+    @apply text-green-400 font-semibold;
+}
+
+.statusInactiveColor{
+    @apply text-red-400 font-semibold;
+}

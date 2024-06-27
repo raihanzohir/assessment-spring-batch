@@ -1,0 +1,86 @@
+
+<div class="overflow-hidden w-full flex flex-col p-2">
+
+  <div class="card">
+    <div class="flex items-center px-3 py-1 section-header">
+      <h2 class="title my-0 ltr:pr-4 rtl:pl-4 ltr:mr-4 rtl:ml-4 ltr:border-r rtl:border-l hidden sm:block flex-none">
+        <span>Transaction</span>
+      </h2>
+
+      <div class="search-box">
+        <input [(ngModel)]="accountNumber" class="search-box-input" placeholder="A/C Number">
+      </div>
+      <div class="search-box">
+        <input [(ngModel)]="description" class="search-box-input" placeholder="Description">
+      </div>
+      <div class="search-box">
+        <input [(ngModel)]="customerId" class="search-box-input" placeholder="Customer Id">
+      </div>
+      <button class="search-btn" (click)="searchByParameters()">Search <mat-icon class="icon-sm ml-1">search</mat-icon></button>
+      <span class="flex-1"></span>
+      <button class="flex items-center ml-2 px-3 py-1.5 bg-white text-primary rounded-sm" (click)="refreshData()"><mat-icon class="icon-sm mr-1">refresh</mat-icon> Refresh</button>
+    </div>
+
+    <!-- <div *ngIf="isLoading" >
+      <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+    </div> -->
+
+    <div class="overflow-auto">
+      <table mat-table [dataSource]="dataSource" class="w-full data-table">
+
+        <ng-container *ngFor="let column of displayedColumns">
+          <ng-container *ngIf="column.type === 'text'" [matColumnDef]="column.property">
+            <th *matHeaderCellDef mat-header-cell> {{ column.label }}</th>
+            <td *matCellDef="let row" [ngClass]="column.cssClasses" mat-cell>{{ row[column.property] }}</td>
+          </ng-container>
+
+          <ng-container *ngIf="column.type === 'number'" [matColumnDef]="column.property">
+            <th *matHeaderCellDef mat-header-cell> {{ column.label }}</th>
+            <td *matCellDef="let row" [ngClass]="column.cssClasses" mat-cell>{{ row[column.property] | number : '1.0-2' }}</td>
+          </ng-container>
+
+          <ng-container *ngIf="column.type === 'serial'" [matColumnDef]="column.property">
+            <th *matHeaderCellDef mat-header-cell  class="w-[5%]"> {{ column.label }}</th>
+            <td mat-cell *matCellDef="let element; let i = index;">
+              {{ (currentPage * pageSize) + (i+1)}}
+            </td>
+          </ng-container>
+
+          <ng-container *ngIf="column.type === 'button'" [matColumnDef]="column.property">
+            <th *matHeaderCellDef mat-header-cell class="w-[5%]"> {{ column.label }}</th>
+            <td *matCellDef="let row" [ngClass]="column.cssClasses" mat-cell>
+              <div class="flex flex-row justify-center items-center gap-2">
+
+                <button 
+                  (click)="onUpdateEvent(row)"
+                  matTooltip="Modify"
+                  type="button">
+                  <mat-icon>mode_edit</mat-icon>
+                </button>
+
+              </div>
+            </td>
+          </ng-container>
+        </ng-container> 
+      
+        <tr mat-header-row *matHeaderRowDef="visibleColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: visibleColumns;"></tr>
+      </table>
+
+      <div class="custom-paginator flex flex-row p-2">
+        <span class="flex-1"></span>
+        <div class="flex flex-row gap-2 items-center">
+          <div class="px-5">{{(currentPage*pageSize)+1}} to {{ returnMin((currentPage*pageSize)+10, dataLength) }} of {{ dataLength }}</div>
+        </div>
+        <div class="flex gap-2 items-center">
+          <button class="pagination-icon-button" (click)="goToPage(0, pageSize)"><mat-icon class="pagination-icon">first_page</mat-icon></button>
+          <button class="pagination-icon-button" (click)="goToPage(currentPage-1, pageSize)"><mat-icon class="pagination-icon">chevron_left</mat-icon></button>
+          <button class="pagination-icon-button" (click)="goToPage(currentPage+1, pageSize)"><mat-icon class="pagination-icon">chevron_right</mat-icon></button>
+          <button class="pagination-icon-button" (click)="goToPage(totalPage-1, pageSize)"><mat-icon class="pagination-icon">last_page</mat-icon></button>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>

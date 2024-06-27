@@ -1,0 +1,67 @@
+<div class="login-bg bg-[url('src\assets\img\demo\bg_white_blury.jpg')]">
+  <!--Start of Column 1-->
+  <div class="login-container">
+
+    <div class="pt-4 pb-2 border-b flex items-center justify-center">
+      <img src="../../../../../assets/img/icons/logos/65_f.jpg" class="w-8">
+    </div>
+    
+    <div class="px-10 mt-2">
+      <div class="px-3 text-center">
+        <p class="font-semibold text-lg text-primary">LOGIN</p>
+      </div>
+      <!-- Start of form-->
+      <div class="flex-auto">
+        <div class="py-2 flex flex-col">
+          <!-- Error alert -->
+          <div *ngIf="errorMessage">
+            <div class="py-2 px-3 mb-2 flex items-center bg-red-200 rounded-sm">
+              <mat-icon color="warn" svgIcon="mat:info"></mat-icon>
+              <p class="ml-2">{{errorMessage}}</p>
+            </div>
+          </div>
+          <!-- End of Error alert-->
+          
+          <!-- Success alert -->
+          <div *ngIf="successMessage">
+            <div class="py-2 px-3 mb-2 flex items-center bg-green-200 rounded-sm">
+              <mat-icon class="text-green">check_circle</mat-icon>
+              <p class="ml-2">{{successMessage}}</p>
+            </div>
+          </div>
+          <!-- End Success of alert-->
+
+          <div class="flex flex-col gap-1">
+            <mat-form-field>
+              <mat-label>User ID</mat-label>
+              <input matInput [(ngModel)]="userId" name="userId" required>
+            </mat-form-field>
+
+            <mat-form-field>
+              <mat-label>Password</mat-label>
+              <input [type]="inputType" matInput required [(ngModel)]="password" (keydown.enter) = "signIn()">
+              <button (click)="togglePassword()" mat-icon-button matSuffix type="button">
+                <mat-icon *ngIf="visible" svgIcon="mat:visibility"></mat-icon>
+                <mat-icon *ngIf="!visible" svgIcon="mat:visibility_off"></mat-icon>
+              </button>
+            </mat-form-field>
+
+            <div>
+    
+              <div class="flex items-center justify-center mt-4 gap-4">
+                <button [disabled]="!userId || !password" class="px-10" color="primary" mat-raised-button type="button" (click)="signIn()">
+                  <mat-progress-spinner *ngIf="signInLoading" diameter="20" mode="indeterminate" class="mr-2"></mat-progress-spinner> SIGN IN
+                </button>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+      <!-- End of Form -->
+    </div> 
+  </div>
+  <!--End of Column 1-->
+
+</div>

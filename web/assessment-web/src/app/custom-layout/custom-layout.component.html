@@ -1,0 +1,12 @@
+<ng-template #sidenavRef>
+  <vex-sidenav [collapsed]="sidenavCollapsed$ | async"></vex-sidenav>
+</ng-template>
+
+<ng-template #toolbarRef>
+  <vex-toolbar [hasShadow]="toolbarShadowEnabled$ | async"
+               [mobileQuery]="!(isDesktop$ | async)"
+               class="vex-toolbar"></vex-toolbar>
+</ng-template>
+
+<vex-layout [sidenavRef]="sidenavRef"
+            [toolbarRef]="toolbarRef"></vex-layout>

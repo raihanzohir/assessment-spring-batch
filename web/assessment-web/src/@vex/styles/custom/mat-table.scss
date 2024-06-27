@@ -1,0 +1,33 @@
+th.mat-header-cell{
+    @apply font-semibold text-center bg-gray-200 text-black;
+}
+
+th.mat-header-cell:first-of-type, td.mat-cell:first-of-type, th.mat-header-cell:last-of-type, td.mat-cell:last-of-type {
+    padding: 0.1rem;
+}
+
+tr.mat-header-row.cdk-header-row{
+    height: 2.5rem;
+}
+
+tr.mat-row.cdk-row{
+    height: 2.2rem;
+}
+
+.mat-row:nth-of-type(even) .mat-cell{
+    @apply bg-gray-100;
+}
+
+.mat-row:hover .mat-cell{
+    @apply bg-gray-200;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.mat-cell, .mat-header-cell{
+    border-right: 1px solid rgba(0,0,0,.12);
+}
+
+.mat-column-serialNo {
+    text-align: center;
+}
