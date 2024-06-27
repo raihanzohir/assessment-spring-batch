@@ -3,6 +3,7 @@ Backend Technical Assessment
 
 ## Service
 
+- `assessment-service` directory
 - Install Java 17 or higher
 - Open the project under the service folder with IDE
 - Open Terminal and Run `mvn clean package`
