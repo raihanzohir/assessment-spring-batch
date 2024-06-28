@@ -14,7 +14,7 @@ public interface TransactionHistoryRepository extends JpaRepository<TransactionH
     Page<TransactionHistory> findAll(Pageable pageable);
 
     @Query("SELECT th FROM TransactionHistory th WHERE th.customerId = :customerId OR th.accountNumber = :accountNo OR th.description LIKE :description")
-    Page<TransactionHistory> findByCustomerIdOrAccountNumberOrDescriptionNative(String customerId, String accountNo, String description, Pageable pageable);
+    Page<TransactionHistory> findByCustomerIdOrAccountNumberOrDescriptionCustom(String customerId, String accountNo, String description, Pageable pageable);
 
     // Not worked :(
     Page<TransactionHistory> findByCustomerIdOrAccountNumberOrDescriptionContainingIgnoreCase(String customerId, String accountNo, String description, Pageable pageable);
