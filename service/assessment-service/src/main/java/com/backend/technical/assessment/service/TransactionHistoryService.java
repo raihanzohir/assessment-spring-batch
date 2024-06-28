@@ -38,7 +38,7 @@ public class TransactionHistoryService {
         if(!"".equals(description)) {
             description = "%" + description + "%";
         }
-        return repository.findByCustomerIdOrAccountNumberOrDescriptionNative(customerId, accountNumber, description, pageable);
+        return repository.findByCustomerIdOrAccountNumberOrDescriptionCustom(customerId, accountNumber, description, pageable);
     }
 
     @Transactional
