@@ -21,6 +21,7 @@ Backend Technical Assessment
 - Open the git bash terminal from the project directory, or use the Visual Studio Code terminal to run the project.
 - Ensure you are in the project directory (which contains `packages.json`).
 - Install all dependencies using the command - `npm install`.
-- Run `ng serve` for a dev server. Navigate to `http://localhost:4200/` for Login page User: `admin` and Password: `123456`.
+- Run `ng serve` for a dev server. Navigate to `http://localhost:4200/` for Login page.
+- Login with User: `admin` and Password: `123456`.
 
 
