@@ -1,0 +1,264 @@
+{
+	"info": {
+		"_postman_id": "ba554011-2fe7-44b9-8eac-48c0edd2e365",
+		"name": "Assessment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "446866"
+	},
+	"item": [
+		{
+			"name": "Batch Process",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://10.11.201.214:9090/api/v1/batch-process",
+					"protocol": "http",
+					"host": [
+						"10",
+						"11",
+						"201",
+						"214"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"v1",
+						"batch-process"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find All",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9090/api/v1/transactions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"v1",
+						"transactions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search By Customer ID",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://10.11.201.214:9090/api/v1/transactions/search?customerId=222",
+					"protocol": "http",
+					"host": [
+						"10",
+						"11",
+						"201",
+						"214"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"v1",
+						"transactions",
+						"search"
+					],
+					"query": [
+						{
+							"key": "customerId",
+							"value": "222"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search By Account No",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://10.11.201.214:9090/api/v1/transactions/search?accountNo=8872838283",
+					"protocol": "http",
+					"host": [
+						"10",
+						"11",
+						"201",
+						"214"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"v1",
+						"transactions",
+						"search"
+					],
+					"query": [
+						{
+							"key": "accountNo",
+							"value": "8872838283"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search By Description",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://10.11.201.214:9090/api/v1/transactions/search?description=FUND TRANSFER",
+					"protocol": "http",
+					"host": [
+						"10",
+						"11",
+						"201",
+						"214"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"v1",
+						"transactions",
+						"search"
+					],
+					"query": [
+						{
+							"key": "description",
+							"value": "FUND TRANSFER"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Description",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\" : 1,\r\n    \"description\" : \"EDIT 2 - 3rd Party FUND TRANSFER\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9090/api/v1/transactions/update/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"v1",
+						"transactions",
+						"update",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"admin\",\r\n  \"password\":\"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://10.11.201.214:9090/api/v1/auth/login",
+					"protocol": "http",
+					"host": [
+						"10",
+						"11",
+						"201",
+						"214"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
