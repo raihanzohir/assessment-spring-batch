@@ -31,15 +31,26 @@ public class TransactionHistoryController {
 
     @GetMapping("/search")
     public ResponseEntity<?> findTransactionByCustomerIdOrAccountNumberOrDescription(
-            @RequestParam(required = false, defaultValue = "") String customerId,
-            @RequestParam(required = false, defaultValue = "") String accountNo,
-            @RequestParam(required = false, defaultValue = "") String description,
+            @RequestParam(name = "searchParam", required = false, defaultValue = "") String searchParam,
+//            @RequestParam(required = false, defaultValue = "") String accountNo,
+//            @RequestParam(required = false, defaultValue = "") String description,
             @RequestParam(defaultValue = "0") int page,
             @RequestParam(defaultValue = "10") int size) {
-        System.out.println("accountNo = " + accountNo);
         Pageable pageable = PageRequest.of(page, size);
-        return new ResponseEntity<>(service.findTransactionByCustomerIdOrAccountNumberOrDescription(customerId, accountNo, description, pageable), HttpStatus.OK);
+        return new ResponseEntity<>(service.findTransactionByCustomerIdOrAccountNumberOrDescription(searchParam, pageable), HttpStatus.OK);
     }
+
+//    @GetMapping("/search-new")
+//    public ResponseEntity<?> findTransactionByCustomerIdOrAccountNumberOrDescriptionNew(
+//            @RequestParam(name = "searchParam", required = false, defaultValue = "") String searchParam,
+//            @RequestParam(required = false, defaultValue = "") String accountNo,
+//            @RequestParam(required = false, defaultValue = "") String description,
+//            @RequestParam(defaultValue = "0") int page,
+//            @RequestParam(defaultValue = "10") int size) {
+//        System.out.println("accountNo = " + accountNo);
+//        Pageable pageable = PageRequest.of(page, size);
+//        return new ResponseEntity<>(service.findTransactionByCustomerIdOrAccountNumberOrDescription(searchParam, pageable), HttpStatus.OK);
+//    }
 
     @PatchMapping("/update/{id}")
     public ResponseEntity<?> updateTransactionHistoryDescription(@PathVariable("id") Long id, @RequestBody TransactionHistoryDescriptionOnly partialUpdate) throws Exception {

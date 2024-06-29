@@ -34,11 +34,16 @@ public class TransactionHistoryService {
         return repository.findById(id);
     }
 
-    public Page<TransactionHistory> findTransactionByCustomerIdOrAccountNumberOrDescription(String customerId, String accountNumber, String description, Pageable pageable) {
-        if(!"".equals(description)) {
-            description = "%" + description + "%";
-        }
-        return repository.findByCustomerIdOrAccountNumberOrDescriptionCustom(customerId, accountNumber, description, pageable);
+//    public Page<TransactionHistory> findTransactionByCustomerIdOrAccountNumberOrDescription(String customerId, String accountNumber, String description, Pageable pageable) {
+//        if(!"".equals(description)) {
+//            description = "%" + description + "%";
+//        }
+//        return repository.findByCustomerIdOrAccountNumberOrDescriptionCustom(customerId, accountNumber, description, pageable);
+//    }
+
+    public Page<TransactionHistory> findTransactionByCustomerIdOrAccountNumberOrDescription(String searchParam, Pageable pageable) {
+
+        return repository.findByCustomerIdOrAccountNumberOrDescriptionContainingIgnoreCase(searchParam, pageable);
     }
 
     @Transactional
